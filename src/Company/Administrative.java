@@ -10,6 +10,7 @@ import java.util.Vector;
 /**
  *
  * @author Rita y Sebastian
+ * Proyecto1
  */
 public class Administrative extends Employee {
 
