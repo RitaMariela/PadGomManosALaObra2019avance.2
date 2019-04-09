@@ -5,37 +5,31 @@
  */
 package Company;
 
-
 import java.util.Vector;
 
 /**
  *
  * @author Rita
  */
-public class Administrative extends Employee{
+public class Administrative extends Employee {
 
     String category;
-    double salaryAdm1,salaryAdm2;
- 
-  
-     
- 
-    
-public Administrative() {
+    double salaryAdm1, salaryAdm2;
+
+    public Administrative() {
         super();
         this.category = "";
         this.salaryAdm1 = 0;
-        this.salaryAdm2=0;
+        this.salaryAdm2 = 0;
     }
-    public Administrative( String category, double salaryAdm1,double salaryAdm2, String name, String lastName, double salary, int ID, int number, String quality, String position,double hours, String schedule,String attribute1, String attribute2) {
+
+    public Administrative(String category, double salaryAdm1, double salaryAdm2, String name, String lastName, double salary, int ID, int number, String quality, String position, double hours, String schedule, String attribute1, String attribute2) {
         super(name, lastName, salary, ID, number, quality, position, hours, schedule, attribute1, attribute2);
         this.category = category;
         this.salaryAdm1 = salaryAdm1;
-        this.salaryAdm2=salaryAdm2;
-        
-    }
+        this.salaryAdm2 = salaryAdm2;
 
-    
+    }
 
     public String getCategory() {
         return category;
@@ -117,33 +111,23 @@ public Administrative() {
         this.number = number;
     }
 
-   
-    
-
     @Override
     public void CalculaterSalary() {
-        if(category=="1"&&quality=="si")
-            salaryAdm1=salary+(salary*0.0395);
-        else {
-            if(category=="1"&&quality=="no")
-                salaryAdm1=salary;
-            else {
-                if(category=="2"&&quality=="si")
-                    salaryAdm2=salary+(((salary*0.20)+salary)*0.0395)+(salary*0.20);
-                else {
-                    if(category=="2"&&quality=="no")
-                        salaryAdm2=salary+(salary*0.20);
+        if (category == "1" && quality == "si") {
+            salaryAdm1 = salary + (salary * 0.0395);
+        } else {
+            if (category == "1" && quality == "no") {
+                salaryAdm1 = salary;
+            } else {
+                if (category == "2" && quality == "si") {
+                    salaryAdm2 = salary + (((salary * 0.20) + salary) * 0.0395) + (salary * 0.20);
+                } else {
+                    if (category == "2" && quality == "no") {
+                        salaryAdm2 = salary + (salary * 0.20);
+                    }
                 }
             }
-        } 
+        }
     }
-//    public void output(String position, String qualify){
-//      for (int i = 0; i < arrayname.size(); i++)
-//        if(position=="Administrativo tipo 1" && qualify=="si"){
-//            result+=salaryAdm1;
-//            
-//            
-//        }
-//        
-//    }
+
 }

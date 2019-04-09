@@ -22,25 +22,22 @@ public class VentanaMenu {
 
     VBox vMenu = new VBox();
     VBox vWindows = new VBox();
-    
 
     public Scene Menu() {
         InterfazEmployee em = new InterfazEmployee();
-        searchEmployee sm= new searchEmployee();
-        Inventory ivt= new Inventory();
-        InterfazSearchVehicle isv= new InterfazSearchVehicle();
-        InterfazEdit ie= new InterfazEdit();
-        
+        searchEmployee sm = new searchEmployee();
+        Inventory ivt = new Inventory();
+        InterfazSearchVehicle isv = new InterfazSearchVehicle();
+        InterfazEdit ie = new InterfazEdit();
 
         InterfazVehicles iv = new InterfazVehicles();
 
         vMenu = new VBox();
-       vWindows.setStyle("-fx-background-color:#9AC0CD");
+        vWindows.setStyle("-fx-background-color:#9AC0CD");
         vMenu.setStyle("-fx-background-image: url(autos.png);"
                 + "    -fx-background-repeat: no-repeat;"
                 + "    -fx-background-size: 700 700;"
                 + "    -fx-background-position: center;");
-        
 
         Scene scene1 = new Scene(vMenu, 700, 700);
 
@@ -63,8 +60,8 @@ public class VentanaMenu {
             vWindows.getChildren().clear();
             vWindows.getChildren().addAll(em.employee());
         });
-        
-        MenuItem mI_Edit= new MenuItem("Editar empleado");
+
+        MenuItem mI_Edit = new MenuItem("Editar empleado");
         mI_Edit.setOnAction((event) -> {
             vWindows.getChildren().clear();
             vWindows.getChildren().addAll(ie.InterfazEB());
@@ -86,19 +83,15 @@ public class VentanaMenu {
             vWindows.getChildren().clear();
             vWindows.getChildren().add(ivt.invtCar());
         });
-        
-        MenuItem mI_searchV=new MenuItem("Buscar Vehiculo");
-      mI_searchV.setOnAction((event) -> {
-          vWindows.getChildren().clear();
-          vWindows.getChildren().add( isv.InterfazSV());
-     });
-        
-      
-         
-      
-               
-        menu_Employees.getItems().addAll(mI_add, mI_search,mI_Edit);
-        menu_cars.getItems().addAll(mI_addV,mI_searchV, mI_inventory);
+
+        MenuItem mI_searchV = new MenuItem("Buscar Vehiculo");
+        mI_searchV.setOnAction((event) -> {
+            vWindows.getChildren().clear();
+            vWindows.getChildren().add(isv.InterfazSV());
+        });
+
+        menu_Employees.getItems().addAll(mI_add, mI_search, mI_Edit);
+        menu_cars.getItems().addAll(mI_addV, mI_searchV, mI_inventory);
 
         mB_Menu.getMenus().addAll(menu_Employees, menu_cars);
         ((VBox) scene1.getRoot()).getChildren().addAll(mB_Menu, vWindows);

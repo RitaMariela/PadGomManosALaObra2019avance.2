@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package padgommanosalaobra2019;
+
 import File.VehicleFile;
 import Company.Vehicle;
 import java.io.File;
@@ -25,20 +26,15 @@ import javafx.stage.Stage;
  * @author Rita
  */
 public class PadGomManosALaObra2019 extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) {
-        VentanaMenu vm=new VentanaMenu();
-        
-       // primaryStage.getIcons().add(new Image("logotipo.jpg"));
-        //primaryStage.setResizable(false);
+        VentanaMenu vm = new VentanaMenu();
         primaryStage.setTitle("PadGom Manos a la Obra 2019");
         primaryStage.setScene(vm.Menu());
-        
+
         primaryStage.show();
-        
-    
-        
+
     }
 
     /**
@@ -53,21 +49,13 @@ public class PadGomManosALaObra2019 extends Application {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };
-        //em.llenar("ana", "robles",250, 124, 87, "Administrativo tipo 1","Si");
-        //System.out.println(em.output(100));
-        Company.Vehicle vh= new Vehicle() {
+
+        Company.Vehicle vh = new Vehicle() {
             @Override
             public void information() {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };
-        //vh.llenar("toyota",274 );
-        //vh.llenar("honda",200 );
-        
 
-        
-            }
-        }
-        
-
-    
+    }
+}

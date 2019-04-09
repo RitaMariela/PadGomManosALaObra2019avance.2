@@ -28,7 +28,7 @@ import javax.swing.text.StyledEditorKit;
  */
 public class InterfazSearchVehicle {
 
-    boolean b= false;
+    boolean b = false;
     InterfazVehicles iv = new InterfazVehicles();
     HeavyMachinary hv = new HeavyMachinary();
     String result;
@@ -55,17 +55,11 @@ public class InterfazSearchVehicle {
         Button bTN_search = new Button("Buscar");
         gPSearchV.add(bTN_search, 0, 2);
         bTN_search.setOnAction((event) -> {
-//            for (int i = 0; i <iv.aL_information.size() ; i++) {
-//                    result+="\n"+ iv.aL_information.get(i);  
-//            }
-//            tA_search.setText(result);
             File fileVehicle = new File("Vehicle.Dat");
             try {
                 VehicleFile vf = new VehicleFile(fileVehicle);
-                
-                
+
                 tA_search.setText(vf.getVehiclSerie(Integer.parseInt(tF_Serie.getText())).toString());
-               
 
             } catch (IOException ex) {
                 Logger.getLogger(Inventory.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,7 +74,7 @@ public class InterfazSearchVehicle {
             int serie = Integer.parseInt(tF_Serie.getText());
             try {
                 VehicleFile vf = new VehicleFile(fileVehicle);
-                //tA_search.setText(""+vf.getVehicle(Integer.parseInt(tF_Serie.getText())-1));
+
                 vf.deleteRecord(serie);
 
             } catch (IOException ex) {
@@ -109,19 +103,17 @@ public class InterfazSearchVehicle {
 
         Button bTN_edit = new Button("Editar");
         gPSearchV.add(bTN_edit, 1, 11);
-        
-        
-        
+
         bTN_edit.setOnAction((event) -> {
-            if(cBAmerican.getSelectionModel().getSelectedItem().equals("Si")){
-                b =true;   
+            if (cBAmerican.getSelectionModel().getSelectedItem().equals("Si")) {
+                b = true;
             }
-            
+
             File fileVehicle = new File("Vehicle.Dat");
             try {
                 VehicleFile vf = new VehicleFile(fileVehicle);
-                //tA_search.setText(""+vf.getVehicle(Integer.parseInt(tF_Serie.getText())-1));
-                vf.EditRecord(Integer.parseInt(tF_Serie.getText()),tF_name.getText(),Integer.parseInt(tFYear2.getText()),b);
+
+                vf.EditRecord(Integer.parseInt(tF_Serie.getText()), tF_name.getText(), Integer.parseInt(tFYear2.getText()), b);
 
             } catch (IOException ex) {
                 Logger.getLogger(Inventory.class.getName()).log(Level.SEVERE, null, ex);

@@ -42,8 +42,6 @@ public class InterfazVehicles {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
-    ArrayList aL_information = new ArrayList();
-    String arreglo[] = new String[aL_information.size()];
 
     public static VehicleFile vehicleFile;
     public static Vehicle vehicle1, vehicle2, vehicle3, vehicle4;
@@ -135,19 +133,12 @@ public class InterfazVehicles {
         Label lB_Result = new Label();
         gP3Employee.add(lB_Result, 0, 10);
 
-//                vehicle4 = new Vehicle(tFMarca.getText(),tFLicensePlate.getText(),Integer.parseInt(tFYear.getText()),Float.parseFloat(tFmileage.getText()),""+CBAmerican.getSelectionModel().getSelectedItem()) {
-//                 @Override
-//                 public void information() {
-//                     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//                 }
-//         };
         Button bTNAdd = new Button("Agregar Vehiculo");
         gP3Employee.add(bTNAdd, 0, 8);
         bTNAdd.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //vehicleFile.addEndVehicle(tFMarca.getText(),tFLicensePlate.getText(),Integer.parseInt(tFYear.getText()),Integer.parseInt(tFmileage.getText()),""+CBAmerican.getSelectionModel().getSelectedItem());
-                //aL_information.add(tFMarca.getText()+", "+tFLicensePlate.getText()+", "+Integer.parseInt(tFYear.getText())+", "+Float.parseFloat(tFmileage.getText())+", "+CBAmerican.getSelectionModel().getSelectedItem());
+
                 File fileVehicle = new File("Vehicle.Dat");
                 String brand = tFMarca.getText();
                 int licensePlate = Integer.parseInt(tFLicensePlate.getText());
@@ -175,9 +166,9 @@ public class InterfazVehicles {
                         tFmileage.setText("");
                         tFLicensePlate.setText("");
                     } else {
-                        lB_Result.setText("El vehiculo ya existe, no pudo ser agregado"); 
-                      tFLicensePlate.setText("");
-                        
+                        lB_Result.setText("El vehiculo ya existe, no pudo ser agregado");
+                        tFLicensePlate.setText("");
+
                     }
 
                 } catch (IOException ex) {
@@ -200,16 +191,4 @@ public class InterfazVehicles {
         return vInterfazV;
     }
 
-    public void fillA() throws IOException {
-        for (int i = 0; i < aL_information.size(); i++) {
-            arreglo[i] = (String) aL_information.get(i);
-        }
-    }
-
-    public String mostrar() {
-        for (int i = 0; i < arreglo.length; i++) {
-            r += arreglo[i] + "\n";
-        }
-        return r;
-    }
 }

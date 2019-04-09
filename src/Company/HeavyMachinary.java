@@ -17,21 +17,19 @@ import java.util.Vector;
  */
 public class HeavyMachinary extends Vehicle {
 
-    String Type;
-    ArrayList aL_information = new ArrayList();
-    String arreglo[] = new String[aL_information.size()];
+   
     public RandomAccessFile randomAccesFile;
     private int regsQuantity;//me indica la cantidad de registros
     private int regSize;
     private String myFilePath;
 
     public HeavyMachinary() {
-        this.Type = "";
+       
     }
 
     public HeavyMachinary(String Type, String brand, int licensePlate, int year, float mileage, boolean american) {
         super(brand, licensePlate, year, mileage, american);
-        this.Type = Type;
+       
     }
 
     @Override
@@ -40,14 +38,7 @@ public class HeavyMachinary extends Vehicle {
     }
     
     
-     public void addV( String brand, String licensePlate, int year, float mileage, String american)throws IOException{
-         randomAccesFile.seek(randomAccesFile.length());
-         randomAccesFile.writeUTF(brand);
-         randomAccesFile.writeUTF(licensePlate);
-         randomAccesFile.writeInt(year);
-         randomAccesFile.writeFloat(mileage);
-         randomAccesFile.writeUTF(american );
-     }
+
 
     
     }

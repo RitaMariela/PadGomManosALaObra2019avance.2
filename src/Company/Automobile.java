@@ -5,34 +5,26 @@
  */
 package Company;
 
-
 import java.util.ArrayList;
 import java.util.Vector;
+
 /**
  *
  * @author Rita
  */
 public class Automobile extends Vehicle {
-   
 
     public Automobile() {
         super();
     }
-    
-    public Automobile(String brand, int licensePlate,int year,float mileage,boolean american ) {
+
+    public Automobile(String brand, int licensePlate, int year, float mileage, boolean american) {
         super(brand, licensePlate, year, mileage, american);
     }
-    
 
-public void llenar2(){
-     
-    }
     @Override
     public void information() {
-        
-   
+
     }
-    
-    
-    
+
 }

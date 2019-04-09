@@ -25,22 +25,22 @@ import java.util.logging.Logger;
  * @author sebas
  */
 public class Inventory {
-    Company.Vehicle vh= new Vehicle() {
+
+    Company.Vehicle vh = new Vehicle() {
         @Override
         public void information() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     };
-    String Resultado="";
-    InterfazVehicles iv=new InterfazVehicles();
+    String Resultado = "";
+    InterfazVehicles iv = new InterfazVehicles();
 
     public VBox invtCar() {
-        VBox vinvtacar= new VBox();
+        VBox vinvtacar = new VBox();
         GridPane gPInventory = new GridPane();
         gPInventory.setAlignment(Pos.CENTER);
 
         gPInventory.setMinSize(700, 700);//tamaño gridpane
-       
 
         gPInventory.setVgap(10);
         gPInventory.setHgap(10);
@@ -50,42 +50,34 @@ public class Inventory {
 
         TextArea tA_Inventory = new TextArea();
         gPInventory.add(tA_Inventory, 0, 2);
-//        for (int i = 0; i < iv.aL_information.size(); i++) {
-//           Resultado+=iv.aL_information.get(i);
-            
-        //}
-       // tA_Inventory.setText(Resultado);
-        //System.out.println(Resultado);
-        
-        Button bTN_Invetory= new Button("Inventario");
+
+        Button bTN_Invetory = new Button("Inventario");
         gPInventory.add(bTN_Invetory, 0, 0);
         bTN_Invetory.setOnAction((event) -> {
-                File fileVehicle = new File("Vehicle.Dat");
+            File fileVehicle = new File("Vehicle.Dat");
             try {
-                VehicleFile vf=new VehicleFile(fileVehicle);
+                VehicleFile vf = new VehicleFile(fileVehicle);
                 List<Vehicle> vehicles = vf.getAllPersons();
-                
-                for(Vehicle currentVehicle: vehicles){
+
+                for (Vehicle currentVehicle : vehicles) {
                     tA_Inventory.setText(vehicles.toString());
-            
-        }
+
+                }
             } catch (IOException ex) {
                 Logger.getLogger(Inventory.class.getName()).log(Level.SEVERE, null, ex);
             }
-              
-          
-            
+
         });
-        
-        
-          Button btNExit= new Button("Salir");
-         gPInventory.add(btNExit, 0, 3);
-         btNExit.setOnAction((event) -> {gPInventory.getChildren().clear();
-         gPInventory.setBackground(Background.EMPTY);
-         vinvtacar.getChildren().clear();
-         });
-        
-         vinvtacar.getChildren().addAll(gPInventory);
+
+        Button btNExit = new Button("Salir");
+        gPInventory.add(btNExit, 0, 3);
+        btNExit.setOnAction((event) -> {
+            gPInventory.getChildren().clear();
+            gPInventory.setBackground(Background.EMPTY);
+            vinvtacar.getChildren().clear();
+        });
+
+        vinvtacar.getChildren().addAll(gPInventory);
         return vinvtacar;
     }
 

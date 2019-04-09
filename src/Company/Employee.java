@@ -20,13 +20,7 @@ public abstract class Employee {
     String name, lastName, position, quality, attribute1, attribute2, schedule;
     double salary, hours;
     int ID, number;
-//    ArrayList arrayname = new ArrayList();
-//    ArrayList arrayLastname = new ArrayList();
-//    ArrayList arraySalary = new ArrayList();
-//    ArrayList arrayID = new ArrayList();
-//    ArrayList arrayNumber = new ArrayList();
-//    ArrayList arrayQuality = new ArrayList();
-//    ArrayList arrayPosition = new ArrayList();
+
     String result;
 
     public Employee() {
@@ -42,7 +36,7 @@ public abstract class Employee {
         this.attribute1 = "";
         this.attribute2 = "";
     }
-
+//constructor
     public Employee(String name, String lastName, double salary, int ID, int number, String quality, String position, double hours, String schedule, String attribute1, String attribute2) {
         this.name = name;
         this.lastName = lastName;
@@ -57,6 +51,7 @@ public abstract class Employee {
         this.attribute2 = attribute2;
     }
 
+    //getter and setter
     public String getName() {
         return name;
     }
@@ -114,17 +109,6 @@ public abstract class Employee {
 
     }
 
-//    public void llenar(String name, String lastname, int salary, int ID, int number, String position, String quality) {
-//        
-//            arrayname.add(name);
-//            arrayLastname.add(lastname);
-//            arraySalary.add(salary);
-//            arrayID.add(ID);
-//            arrayNumber.add(number);
-//            arrayPosition.add(position);
-//            arrayQuality.add(quality);
-//
-//        }
     public String getAttribute1() {
         return attribute1;
     }
@@ -156,114 +140,94 @@ public abstract class Employee {
     public void setHours(double hours) {
         this.hours = hours;
     }
-
-//    public String output(int ID) {
-//        for (int i = 0; i < arrayname.size(); i++) {
-//            
-//            if (arrayID.get(i).equals(ID)){
-//                result=arrayname.get(i)+","+arrayLastname.get(i)+","+
-//                        arrayNumber.get(i)+","+arrayID.get(i)+","+arraySalary.get(i)+","+arrayPosition.get(i)+","+arrayQuality.get(i);
-//                
-//            }
-//            else{
-//                result="El empleado no existe en el registro";
-//            }
-//            
-//            
-//        }
-//return result;
-//    }
+//formulas
     public String toString() {
         //if de conductor de automovil
         if (this.quality.equals("Conductor de automovil") && this.position.equalsIgnoreCase("Si") && this.schedule.equalsIgnoreCase("dia")) {
             return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (this.salary * this.hours + ((this.salary * this.hours)) * 0.0395) + "\n";
         }
-        if(this.quality.equals("Conductor de automovil")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("dia")){
+        if (this.quality.equals("Conductor de automovil") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("dia")) {
             return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (this.salary * this.hours) + "\n";
         }
-         if(this.quality.equals("Conductor de automovil")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("noche")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours)*2) + "\n";
+        if (this.quality.equals("Conductor de automovil") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours) * 2) + "\n";
         }
-         if (this.quality.equals("Conductor de automovil") && this.position.equals("Si") && this.schedule.equals("noche")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours)*2) + ((this.salary * this.hours)*2) * 0.0395) + "\n";
+        if (this.quality.equals("Conductor de automovil") && this.position.equals("Si") && this.schedule.equals("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours) * 2) + ((this.salary * this.hours) * 2) * 0.0395) + "\n";
         }
-         
+
         //if de conductor de grua
-         if (this.quality.equals("Conductor de grúa") && this.position.equals("Si") && this.schedule.equalsIgnoreCase("dia")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours + ((this.salary * this.hours)) * 0.0395)+8) + "\n";
+        if (this.quality.equals("Conductor de grúa") && this.position.equals("Si") && this.schedule.equalsIgnoreCase("dia")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours + ((this.salary * this.hours)) * 0.0395) + 8) + "\n";
         }
-        if(this.quality.equals("Conductor de grúa")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("dia")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours)+8) + "\n";
+        if (this.quality.equals("Conductor de grúa") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("dia")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours) + 8) + "\n";
         }
-         if(this.quality.equals("Conductor de grúa")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("noche")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours)*2)+8) + "\n";
+        if (this.quality.equals("Conductor de grúa") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours) * 2) + 8) + "\n";
         }
-         if (this.quality.equals("Conductor de grúa") && this.position.equals("Si") && this.schedule.equals("noche")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((((this.salary * this.hours)*2) + ((this.salary * this.hours)*2) * 0.0395)+8) + "\n";
+        if (this.quality.equals("Conductor de grúa") && this.position.equals("Si") && this.schedule.equals("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((((this.salary * this.hours) * 2) + ((this.salary * this.hours) * 2) * 0.0395) + 8) + "\n";
         }
-         
-         
-         
-         //if de conductor de vagoneta
-          if (this.quality.equals("Conductor Vagoneta") && this.position.equals("Si") && this.schedule.equalsIgnoreCase("dia")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours + ((this.salary * this.hours)) * 0.0395)+6) + "\n";
+
+        //if de conductor de vagoneta
+        if (this.quality.equals("Conductor Vagoneta") && this.position.equals("Si") && this.schedule.equalsIgnoreCase("dia")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours + ((this.salary * this.hours)) * 0.0395) + 6) + "\n";
         }
-        if(this.quality.equals("Conductor Vagoneta")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("dia")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours)+6) + "\n";
+        if (this.quality.equals("Conductor Vagoneta") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("dia")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours) + 6) + "\n";
         }
-         if(this.quality.equals("Conductor Vagoneta")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("noche")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours)*2)+6) + "\n";
+        if (this.quality.equals("Conductor Vagoneta") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours) * 2) + 6) + "\n";
         }
-         if (this.quality.equals("Conductor Vagoneta") && this.position.equals("Si") && this.schedule.equals("noche")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((((this.salary * this.hours)*2) + ((this.salary * this.hours)*2) * 0.0395)+6) + "\n";
+        if (this.quality.equals("Conductor Vagoneta") && this.position.equals("Si") && this.schedule.equals("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((((this.salary * this.hours) * 2) + ((this.salary * this.hours) * 2) * 0.0395) + 6) + "\n";
         }
-        
-         //if de conductor de montacargas
-         
-         if (this.quality.equals("Conductor Montacargas") && this.position.equals("Si") && this.schedule.equalsIgnoreCase("dia")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours + ((this.salary * this.hours)) * 0.0395)+14) + "\n";
+
+        //if de conductor de montacargas
+        if (this.quality.equals("Conductor Montacargas") && this.position.equals("Si") && this.schedule.equalsIgnoreCase("dia")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours + ((this.salary * this.hours)) * 0.0395) + 14) + "\n";
         }
-        if(this.quality.equals("Conductor Montacargas")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("dia")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours)+14) + "\n";
+        if (this.quality.equals("Conductor Montacargas") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("dia")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary * this.hours) + 14) + "\n";
         }
-         if(this.quality.equals("Conductor Montacargas")&& this.position.equalsIgnoreCase("No")&&this.schedule.equalsIgnoreCase("noche")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours)*2)+14) + "\n";
+        if (this.quality.equals("Conductor Montacargas") && this.position.equalsIgnoreCase("No") && this.schedule.equalsIgnoreCase("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + (((this.salary * this.hours) * 2) + 14) + "\n";
         }
-         if (this.quality.equals("Conductor Montacargas") && this.position.equals("Si") && this.schedule.equals("noche")) {
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((((this.salary * this.hours)*2) + ((this.salary * this.hours)*2) * 0.0395)+14) + "\n";
+        if (this.quality.equals("Conductor Montacargas") && this.position.equals("Si") && this.schedule.equals("noche")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((((this.salary * this.hours) * 2) + ((this.salary * this.hours) * 2) * 0.0395) + 14) + "\n";
         }
-         
-         //if de conserje
-         if(this.quality.equals("Conserje") &&this.position.equals("Si")){
-             return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary+(this.salary/8))+((((this.salary/8)*0.25)*this.hours))+this.salary+((this.salary/8)+(((this.salary/8)*0.25)*this.hours))*0.0395)+ "\n";
-         }
-         if (this.quality.equals("Conserje") &&this.position.equals("No")){
-            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " +((this.salary+(this.salary/8)+(((this.salary/8)*0.25)*this.hours)))+"\n"; 
-         }
-        
-         //if de administrativos
-         //Tipo 1
-         if(this.quality.equals("Administrativo tipo 1")&&this.position.equals("Si")){
-              return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary+(this.salary*0.0395)))+"\n";
-         }
-         
-         if(this.quality.equals("Administrativo tipo 1")&&this.position.equals("No")){
-              return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary))+"\n";
-         }
-         //tipo 2
-         
-         if(this.quality.equals("Administrativo tipo 2")&&this.position.equals("Si")){
-              return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary+(this.salary*0.20)+((this.salary+(this.salary*0.20))*0.0395)))+"\n";
-         }
-         
-         if(this.quality.equals("Administrativo tipo 2")&&this.position.equals("No")){
-              return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary + (this.salary*0.20)))+"\n";
-         }
-         
+
+        //if de conserje
+        if (this.quality.equals("Conserje") && this.position.equals("Si")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary + (this.salary / 8)) + ((((this.salary / 8) * 0.25) * this.hours)) + this.salary + ((this.salary / 8) + (((this.salary / 8) * 0.25) * this.hours)) * 0.0395) + "\n";
+        }
+        if (this.quality.equals("Conserje") && this.position.equals("No")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary + (this.salary / 8) + (((this.salary / 8) * 0.25) * this.hours))) + "\n";
+        }
+
+        //if de administrativos
+        //Tipo 1
+        if (this.quality.equals("Administrativo tipo 1") && this.position.equals("Si")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary + (this.salary * 0.0395))) + "\n";
+        }
+
+        if (this.quality.equals("Administrativo tipo 1") && this.position.equals("No")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary)) + "\n";
+        }
+        //tipo 2
+
+        if (this.quality.equals("Administrativo tipo 2") && this.position.equals("Si")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary + (this.salary * 0.20) + ((this.salary + (this.salary * 0.20)) * 0.0395))) + "\n";
+        }
+
+        if (this.quality.equals("Administrativo tipo 2") && this.position.equals("No")) {
+            return "Nombre: " + this.name + " - LastName: " + this.lastName + " - Salary " + this.salary + " - ID" + this.ID + " - Number: " + this.number + "- Position:" + this.quality + "- Quality:" + this.position + "- Hours: " + this.hours + "- Schedule: " + this.schedule + "- Attribute 1: " + this.attribute1 + "- Attribute 2: " + this.attribute2 + " Salario Total: " + ((this.salary + (this.salary * 0.20))) + "\n";
+        }
+
         return null;
     }
-    
-
+//me da el tamaño 
     public int size() {
         return (this.name.length() * 2) + (this.lastName.length() * 2) + 8 + 4 + 1 + (this.position.length() * 2);
     }

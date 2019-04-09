@@ -29,7 +29,7 @@ import javafx.scene.layout.VBox;
  */
 public class searchEmployee {
 
-    String resultado="";
+    String resultado = "";
     Company.Employee em = new Company.Employee() {
         @Override
         public void CalculaterSalary() {
@@ -46,7 +46,7 @@ public class searchEmployee {
         gPSearchE.setVgap(10);
         gPSearchE.setHgap(10);
         gPSearchE.setAlignment(Pos.TOP_CENTER);
-        
+
         Label lbCBposition = new Label("Nombre del empleado");
         gPSearchE.add(lbCBposition, 0, 2);
         lbCBposition.setTranslateX(30);
@@ -56,124 +56,120 @@ public class searchEmployee {
         CBposition.getItems().addAll("Conductor de automovil", "Conductor de grúa", "Conductor Montacargas", "Conductor Vagoneta", "Conserje", "Administrativo tipo 1",
                 "Administrativo tipo 2");
         CBposition.setTranslateX(-30);
-        
-        Label lbname= new Label("Ingresar posición");
-        gPSearchE.add(lbname,0,1);
+
+        Label lbname = new Label("Ingresar posición");
+        gPSearchE.add(lbname, 0, 1);
         lbname.setTranslateX(30);
-        
+
         TextField tFName = new TextField();
         gPSearchE.add(tFName, 1, 2);
         tFName.setTranslateX(-30);
-        
+
         TextArea tA_search = new TextArea();
         gPSearchE.add(tA_search, 0, 3);
         tA_search.setTranslateX(60);
         tA_search.setTranslateY(40);
         tA_search.maxHeight(50);
         tA_search.minHeight(50);
-      
-       
+
         Button bTN_search = new Button("Buscar empleado");
-        gPSearchE.add(bTN_search, 1, 30); 
+        gPSearchE.add(bTN_search, 1, 30);
         bTN_search.setOnAction(((event) -> {
-        File fileEmployee= new File("Automile.Dat");    
-        File fileEmployee2= new File("Crane.Dat");
-        File fileEmployee3= new File("wagons.Dat");
-        File fileEmployee4= new File("LiftTruck.Dat");
-        File fileEmployee5= new File("Janitor.Dat");
-        File fileEmployee6= new File("Adminitration1.Dat");
-        File fileEmployee7= new File("Administration2.Dat");
-        if(CBposition.getSelectionModel().getSelectedItem().equals("Conductor de automovil")){
+            File fileEmployee = new File("Automile.Dat");
+            File fileEmployee2 = new File("Crane.Dat");
+            File fileEmployee3 = new File("wagons.Dat");
+            File fileEmployee4 = new File("LiftTruck.Dat");
+            File fileEmployee5 = new File("Janitor.Dat");
+            File fileEmployee6 = new File("Adminitration1.Dat");
+            File fileEmployee7 = new File("Administration2.Dat");
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Conductor de automovil")) {
                 try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee);
+                    EmployeesFile ef = new EmployeesFile(fileEmployee);
                     List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString());  
-                        
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString());
+
                     }
-                    
+
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(CBposition.getSelectionModel().getSelectedItem().equals("Conductor de grúa")){
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Conductor de grúa")) {
                 try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee2);
+                    EmployeesFile ef = new EmployeesFile(fileEmployee2);
                     List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString());  
-                        
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString());
+
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(CBposition.getSelectionModel().getSelectedItem().equals("Conductor Montacargas")){
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Conductor Montacargas")) {
                 try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee3);
+                    EmployeesFile ef = new EmployeesFile(fileEmployee3);
                     List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString());  
-                        
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString());
+
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(CBposition.getSelectionModel().getSelectedItem().equals("Conductor Vagoneta")){
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Conductor Vagoneta")) {
                 try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee4);
+                    EmployeesFile ef = new EmployeesFile(fileEmployee4);
                     List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString());  
-                        
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString());
+
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(CBposition.getSelectionModel().getSelectedItem().equals("Conserje")){
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Conserje")) {
                 try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee5);
-                   List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString()+"\n");  
-                        
-                    }
-                } catch (IOException ex) {
-                    Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if(CBposition.getSelectionModel().getSelectedItem().equals("Administrativo tipo 1")){
-                try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee6);
+                    EmployeesFile ef = new EmployeesFile(fileEmployee5);
                     List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString());  
-                        
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString() + "\n");
+
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(CBposition.getSelectionModel().getSelectedItem().equals("Administrativo tipo 2")){
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Administrativo tipo 1")) {
                 try {
-                    EmployeesFile ef= new EmployeesFile(fileEmployee7);
-                   List<Employee> persons = ef.getAllPersons();
-                    for (Employee cuEmployee: persons) {
-                      tA_search.setText(persons.toString());  
-                        
+                    EmployeesFile ef = new EmployeesFile(fileEmployee6);
+                    List<Employee> persons = ef.getAllPersons();
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString());
+
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            
+            if (CBposition.getSelectionModel().getSelectedItem().equals("Administrativo tipo 2")) {
+                try {
+                    EmployeesFile ef = new EmployeesFile(fileEmployee7);
+                    List<Employee> persons = ef.getAllPersons();
+                    for (Employee cuEmployee : persons) {
+                        tA_search.setText(persons.toString());
+
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(InterfazEmployee.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
         }));
-        
-     
-      
-        
+
         Button btNExit = new Button("Salir");
         btNExit.setTranslateX(25);
         gPSearchE.add(btNExit, 0, 30);
@@ -183,7 +179,7 @@ public class searchEmployee {
             InterfazSE().getChildren().clear();
         });
 
-       vInterfazSE.getChildren().addAll(gPSearchE);
+        vInterfazSE.getChildren().addAll(gPSearchE);
         return vInterfazSE;
     }
 

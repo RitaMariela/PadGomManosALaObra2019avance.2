@@ -13,24 +13,20 @@ import java.util.Vector;
  */
 public abstract class Driver extends Employee {
 
-   String schedule;
-   double hours;
+    String schedule;
+    double hours;
 
-   
-       public Driver() {
+    public Driver() {
         super();
         this.schedule = "";
         this.hours = 0;
-        
+
     }
-       
-    public Driver(String name, String lastName, double salary, int ID, int number, String quality, String position,double hours, String schedule,String attribute1, String attribute2) {
+
+    public Driver(String name, String lastName, double salary, int ID, int number, String quality, String position, double hours, String schedule, String attribute1, String attribute2) {
         super(name, lastName, salary, ID, number, quality, position, hours, schedule, attribute1, attribute2);
 
-        
     }
-
-   
 
     public String isSchedule() {
         return schedule;
@@ -47,8 +43,6 @@ public abstract class Driver extends Employee {
     public void setHours(double hours) {
         this.hours = hours;
     }
-
-
 
     public String getName() {
         return name;
@@ -105,16 +99,11 @@ public abstract class Driver extends Employee {
     public void setPosition(String position) {
         this.position = position;
     }
-    
- 
+
     public abstract void CalculaterSalary();
 
     public void CalculaterSalary(String name, String lastName, Double salary, int ID, int employeeNumber, String position, String qualified) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public boolean translateEmployee(Vector ve) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-   
 }
